@@ -9,7 +9,7 @@ daily_counters = {}
 totals = {}
 
 
-def main():
+def process_stdin():
     weekday = re.compile(">(?P<weekday>\w+) (?P<day>\d+) \w+<")
     announce = re.compile("- (?P<time>[\d:]+) (?P<city>{})".format(
         "|".join(cities)))
@@ -34,6 +34,9 @@ def main():
             else:
                 totals[m2.group('city')] += 1
 
+
+def main():
+    process_stdin()
     # checks: each day should have 6 slots
     for k in daily_counters.keys():
         check = 0
@@ -49,5 +52,6 @@ def main():
 
     for k, d in totals.items():
         print("{}: {} hours".format(k, d*4))
+
 if __name__ == '__main__':
     main()
