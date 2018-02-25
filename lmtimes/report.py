@@ -7,14 +7,15 @@ import pandas as pd
 cities = ('Moscow', 'Kiev', 'Donetsk', 'St. Petersburg', 'Minsk')
 daily_counters = {}
 totals = {}
-timeline = list()
-switch = list()
-allocated_hours = list()
 
 
 def process_file(file):
     current_city = None
     switch_timestamp = None
+    timeline = list()
+    switch = list()
+    allocated_hours = list()
+
     weekday = re.compile(">(?P<weekday>\w+) (?P<day>\d+) (?P<month>\w+)<")
     announce = re.compile("- (?P<time>[\d:]+) (?P<city>{})".format(
         "|".join(cities)))
@@ -24,7 +25,7 @@ def process_file(file):
         m2 = announce.match(line)
         if m1:
             # day change record
-            print(m1.group('weekday'), m1.group('day'), m1.group('month'))
+            # print(m1.group('weekday'), m1.group('day'), m1.group('month'))
             current_day = "{}-{}-{}".format(2018,
                                             m1.group('month'),
                                             m1.group('day'))
@@ -46,7 +47,7 @@ def process_file(file):
             # 2. add the amount of hours to the city LM is taken away from
             # 3. update variables such as "switch_timestamp" and "current_city"
 
-            print(m2.group('time'))
+            # print(m2.group('time'))
             # print(m2.group('time'), m2.group('city'))
             # adding detected time to a timeline
             timeline.append(pd.Timestamp("{} {}".format(current_day,
@@ -63,10 +64,12 @@ def process_file(file):
                 totals[m2.group('city')] += 1
     # reached end of file: last city just got the bonus, assign 0 hours
     allocated_hours.append(0)
+    return pd.DataFrame({'City': switch, 'Hours': allocated_hours},
+                        index=timeline)
 
 
 def main():
-    process_file('LM_changes_180224.txt')
+    df = process_file('LM_changes_180224.txt')
     # checks: each day should have 6 slots
     for k in daily_counters.keys():
         check = 0
@@ -84,14 +87,18 @@ def main():
         print("{}: {} hours".format(k, d*4))
 
     # combine timeline and switch into a dataframe
-    print(len(switch))
-    print(len(allocated_hours))
-    print(len(timeline))
-    df = pd.DataFrame({'City': switch, 'Hours': allocated_hours},
-                      index=timeline)
+    # print(len(switch))
+    # print(len(allocated_hours))
+    # print(len(timeline))
+    # print(df.head())
+    print("Total allocations since {} until {}".format(
+        df.index[0],
+        df.index[-1]))
+    grouped = df.groupby('City')
+    print(grouped.sum())
 
-    print(df)
-
+    print("Accounted for {} out of {}".format(
+        grouped.sum().sum().iloc[0], df.index[-1] - df.index[0]))
 
 if __name__ == '__main__':
     main()
