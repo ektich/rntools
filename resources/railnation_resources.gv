@@ -1,0 +1,153 @@
+/* colors for different eras are taken from colorbrewer2.org 
+colour-coded resources dependency graph for Rail Nation game www.rail-nation.com
+*/
+
+digraph {
+ subgraph era_1 {
+   node [color = "#b3e2cd"; style = "filled"; fillcolor = "#b3e2cd88"; ]
+   "Era 1";
+   coal; wood; grain; boards; cotton; iron; "iron ore"; cattle; thread; leather;
+ }
+ subgraph era_2 {
+   node [color = "#fdcdac"; style = "filled"; fillcolor = "#fdcdac88";]
+  "Era 2"; 
+  meat; textiles; pastries; paper; hardware; flour; "copper ore"; quartz;
+ }
+ subgraph era_3 {
+  node [color = "#cbd5e8"; style = "filled"; fillcolor = "#cbd5e888";]
+  "Era 3"; 
+  copper; wires; shoes; glassware; packaging; steel; pipes; windows;
+ }
+ subgraph era_4 {
+  node [color = "#f4cae4"; style = "filled"; fillcolor = "#f4cae488";]
+ "Era 4"; 
+ "sheet metal"; silicon; food; "crude oil"; lamps; chemicals; clothing; "stainless steel";
+ }
+ subgraph era_5 { 
+  node [ color = "#e6f5c9"; style = "filled"; fillcolor = "#e6f5c988"; ]
+ "Era 5";  
+ machinery; plastics; aluminium; pottery; bauxite; "steel beams"; petrol; cars;
+}
+subgraph era_6 {
+ node [ color = "#fff2ae"; style = "filled"; fillcolor = "#fff2ae88"; ]
+ "Era 6";
+ /* rank = same;  */
+ electronics; toys; pharmaceuticals; "sports goods"; toiletries; "household supplies";
+ }
+
+ /* some placement fixes */
+
+{rank = same; electronics; "sports goods"}
+/* { rank = same; "Era 5";  cars} */
+
+  "Era 1" -> "Era 2" -> "Era 3" -> "Era 4" -> "Era 5" -> "Era 6";
+
+/* Era 1 */
+ coal -> iron;
+ coal -> copper;
+ coal -> hardware;
+ coal -> steel;
+
+ wood -> boards;
+ wood -> paper;
+ 
+ grain -> cattle;
+ grain -> flour;
+
+ boards -> windows;
+ boards -> packaging;
+ boards -> toys;
+
+ cotton -> thread;
+
+ "iron ore" -> iron;
+ 
+ iron -> steel;
+ iron -> hardware;
+
+ cattle -> leather;
+ cattle -> meat;
+ 
+ thread -> textiles;
+
+ leather -> shoes; 
+
+ /* Era 2 */
+ meat -> food;
+
+ textiles -> clothing;
+ textiles -> cars;
+
+ pastries -> food; 
+
+ paper -> pastries;
+ paper -> packaging;
+
+ hardware -> pipes;
+ hardware -> shoes;
+
+ flour -> pastries;
+ 
+"copper ore" -> copper;
+ 
+ quartz -> glassware;
+ quartz -> pottery;
+ quartz -> silicon;
+
+/* Era 3 */
+ copper -> pipes;
+ copper -> wires;
+ 
+ wires -> lamps;
+ wires -> machinery;
+
+ shoes -> clothing;
+
+ glassware -> lamps;
+ glassware -> "household supplies";
+ glassware -> windows;
+
+ steel -> "steel beams";
+ steel -> "stainless steel";
+ steel -> "sheet metal";
+  
+ pipes -> "steel beams";
+ pipes -> "sheet metal";
+
+ windows -> cars;
+
+ /* Era 4 */
+"sheet metal" -> machinery;
+"sheet metal" -> cars; 
+
+ silicon -> electronics;
+
+ food -> "household supplies";
+
+ "crude oil" -> petrol;
+ "crude oil" -> chemicals;
+
+ lamps -> cars;
+
+ chemicals -> petrol;
+ chemicals -> pharmaceuticals;
+ chemicals -> plastics;
+ chemicals -> "stainless steel";
+ 
+ "stainless steel" -> "household supplies";
+ "stainless steel" -> toiletries;
+
+ /* Era 5 */
+  machinery -> electronics;
+
+  plastics -> toys;
+  plastics -> pharmaceuticals;
+  plastics -> electronics;
+
+ bauxite -> aluminium; 
+
+ aluminium -> "sports goods";
+
+ pottery -> toiletries; 
+  
+}
