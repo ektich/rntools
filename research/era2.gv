@@ -1,0 +1,200 @@
+digraph era2 {
+  rankdir="LR";
+  node [shape=none];
+  giraffe [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Giraffe</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>35</B></TD>
+  </TR>
+  <TR>
+   <TD>Traction:</TD><TD>12+7=19</TD>
+  </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD>5+4=9</TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>10+7=17</B></TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD><B>5+5=10</B></TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>62</B>(90)</TD>
+ </TR>
+  </TABLE>>]
+
+ bat [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Bat</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>25</B></TD>
+  </TR>
+  <TR>
+   <TD>Traction:</TD><TD PORT="f1"><B>10</B></TD>
+  </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD PORT="f2"><B>11</B></TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD>7+5=12</TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD>6</TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>35/36</B>(65)</TD>
+ </TR>
+  </TABLE>>]
+  
+ panther [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Panther</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>25</B></TD>
+  </TR>
+  <TR>
+   <TD>Traction:</TD><TD><B>13</B></TD>
+  </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD>9</TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>15</B></TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD>8</TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>49</B>(66)</TD>
+ </TR>
+  </TABLE>>]
+
+ lynx [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Lynx</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>30</B></TD>
+  </TR>
+  <TR>
+   <TD>Traction:</TD><TD><B>15</B> + 13</TD>
+  </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD><B>6</B></TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>5</B>+10</TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD><B>8</B></TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>41/53</B>(87)</TD>
+ </TR>
+  </TABLE>>]
+
+ blackbear [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Black Bear</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>25</B></TD>
+  </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD>3</TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>10</B>+10</TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD><B>7</B>+5</TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>42</B>(60)</TD>
+ </TR>
+  </TABLE>>]
+
+boar [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Boar</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>35</B></TD>
+  </TR>
+ <TR>
+   <TD>Traction:</TD><TD>11</TD>
+ </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD><B>6</B></TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>16</B></TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD>6+5</TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>57</B>(79)</TD>
+ </TR>
+  </TABLE>>]
+
+cheetah [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Cheetah</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>45</B></TD>
+  </TR>
+ <TR>
+   <TD>Traction:</TD><TD>13</TD>
+ </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD>5+3</TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>10</B>+6</TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD><B>7</B>+7</TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>62</B>(96)</TD>
+ </TR>
+  </TABLE>>]
+
+elephant [label=<
+  <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+  <TR><TD COLSPAN="2">Elephant</TD></TR>
+  <TR>
+   <TD>Engine:</TD><TD><B>40</B></TD>
+  </TR>
+ <TR>
+   <TD>Traction:</TD><TD><B>17</B></TD>
+ </TR>
+ <TR>
+  <TD>Acceleration:</TD><TD><B>12</B></TD>
+ </TR>
+ <TR>
+   <TD>Speed:</TD><TD><B>21</B></TD>
+ </TR>
+ <TR>
+   <TD>Reliability:</TD><TD><B>6</B></TD>
+ </TR>
+ <TR>
+  <TD COLSPAN="2"><B>96</B></TD>
+ </TR>
+  </TABLE>>]
+
+coupling [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+ <TR><TD>Coupling:</TD><TD>50</TD></TR></TABLE>>];
+giraffe -> panther [label="62 (90)"];
+bat:f1 -> panther [label="35 (65)"];
+bat:f2 -> blackbear [label="36 (65)"];
+panther -> lynx [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>62+49=111 (156)</TD></TR><TR><TD>35+49=84 (131)</TD></TR></TABLE>>];
+blackbear -> lynx [label="36+42=78 (125)"];
+lynx -> boar [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>111+41=152 (243)</TD></TR><TR><TD>84+41=125 (218)</TD></TR><TR><TD>78+41=119 (212)</TD></TR></TABLE>>];
+lynx -> cheetah [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>111+53=164 (243)</TD></TR><TR><TD>84+53=137 (218)</TD></TR><TR><TD>78+53=131 (212)</TD></TR></TABLE>>];
+boar -> elephant [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>152+57=209 (322)</TD></TR><TR><TD>125+57=182 (297)</TD></TR><TR><TD>119+57=176 (291)</TD></TR></TABLE>>];
+cheetah -> elephant [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>164+62=226 (339)</TD></TR><TR><TD>137+62=199 (314)</TD></TR><TR><TD>131+62=193 (308)</TD></TR></TABLE>>];
+
+elephant -> coupling [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0"> <TR><TD>209+96=305 (418)</TD></TR><TR><TD>182+96=278 (393)</TD></TR><TR><TD>176+96=272 (387)</TD></TR><TR><TD>226+96=322 (435)</TD></TR><TR><TD>199+96=295 (410)</TD></TR><TR><TD>193+96=289 (404)</TD></TR></TABLE>>];
+}
+ 
+  
