@@ -3,8 +3,9 @@
 ## Ogre -> Phoenix -> Lindworm
 (assuming Ogre is already researched)
  * Ogre -> Phoenix: 12 + 12 = 24
- * Phoenix -> Lindworm: 95 + 16 + 15 + 15 + 20 + 30 = 191
- * Total: **215**
+ * Phoenix -> Lindworm: 95 + 16+ 15 + 20 + 30 (+ 15) = 176 (191)
+
+ * Total: **200 (215)**
 
 ## Ogre -> Pegasus -> Lindworm
 (assuming Ogre is already researched)
